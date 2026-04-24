@@ -49,12 +49,25 @@ nav {
     width: 100%;
     height: 60px;
     background-color: var(--ascent2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h1 {
+    color: var(--primary);
+    font-family: aeonik;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .items {
-    height: 100%;
+    height: calc(100% - 60px);
     width: 100%;
-    background: var(--primary);
+    margin-top: 60px;
+    background: var(--ascent1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -98,8 +111,9 @@ nav {
 }
 
 .item-detail {
-    height: 100%;
+    height: calc(100% - 60px);
     width: 100%;
+    margin-top: 60px;
     background: var(--ascent1);
     border-radius: 1rem;
     position: relative;
@@ -111,7 +125,7 @@ nav {
 .item-detail img {
     width: 100%;
     aspect-ratio: 16/9;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -127,7 +141,7 @@ nav {
     font-family: aeonik;
     padding: 5px;
     left: 1rem;
-    top: 210px;
+    top: 310px;
 }
 
 .item-detail .close {
@@ -137,7 +151,7 @@ nav {
     padding: 0.5rem 1rem;
     position: absolute;
     right: 1rem;
-    top: 210px;
+    top: 310px;
     color: var(--ascent1);
     cursor: pointer;
 }
