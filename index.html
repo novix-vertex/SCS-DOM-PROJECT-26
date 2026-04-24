@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM DAHSBOARD PROJECT</title>
+    <title>Productivity Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
         <nav>
-            <h1>Production Dashboard</h1></nav>
+            <h1>Productivity Dashboard</h1>
+        </nav>
         <section class="items">
             <section id="0" class="todo-list item">
                 <img src="https://i.pinimg.com/736x/75/ba/15/75ba15b74a957f124b64c73c5cc9cfd8.jpg" alt="">
@@ -38,27 +39,40 @@
         <section id="0" class="todo-list-detail item-detail">
             <img src="https://i.pinimg.com/736x/75/ba/15/75ba15b74a957f124b64c73c5cc9cfd8.jpg" alt="">
             <button id="0" class="close">Close</button>
-            <h2>Todo List</h2>
+            <h2 class="page-title">Todo List</h2>
+            <section class="todo-list-container">
+                <section class="todo-list-form">
+                    <h2 class="add-task-title">ADD TASK</h2>
+                    <form action="#">
+                        <input type="text" placeholder="Task Title" name="todo-title" id="todo-title">
+                        <textarea placeholder="Task Description" name="todo-desc" id="todo-desc" rows="5"></textarea>
+                        <button type="submit">ADD</button>
+                    </form>
+                </section>
+                <section class="todo-list-items">
+                    list
+                </section>
+            </section>
         </section>
         <section id="1" class="daily-planner-detail item-detail">
             <img src="https://i.pinimg.com/736x/10/77/fe/1077fe8e7e1f5708b99e06f5cead2ad0.jpg" alt="">
             <button id="1" class="close">Close</button>
-            <h2>Daily Planner</h2>
+            <h2 class="page-title">Daily Planner</h2>
         </section>
         <section id="2" class="motivational-quote-detail item-detail">
             <img src="https://i.pinimg.com/1200x/0a/12/12/0a1212ac717985380f1f35284cd6e700.jpg" alt="">
             <button id="2" class="close">Close</button>
-            <h2>Motivational Quote</h2>
+            <h2 class="page-title">Motivational Quote</h2>
         </section>
         <section id="3" class="pomodoro-timer-detail item-detail">
             <img src="https://i.pinimg.com/736x/e4/03/e4/e403e4e32a1df6d5674d93e11217f44e.jpg" alt="">
             <button id="3" class="close">Close</button>
-            <h2>Pomodoro Timer</h2>
+            <h2 class="page-title">Pomodoro Timer</h2>
         </section>
         <section id="4" class="goals-detail item-detail">
             <img src="https://i.pinimg.com/736x/07/c1/c2/07c1c231835d7c17aa0fe94cf7239a0e.jpg" alt="">
             <button id="4" class="close">Close</button>
-            <h2>Goals</h2>
+            <h2 class="page-title">Goals</h2>
         </section>
     </main>
     <script src="script.js"></script>

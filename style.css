@@ -60,7 +60,6 @@ nav h1 {
     font-family: aeonik;
     font-weight: 700;
     text-align: center;
-    text-transform: uppercase;
 }
 
 .items {
@@ -125,7 +124,7 @@ nav h1 {
 .item-detail img {
     width: 100%;
     aspect-ratio: 16/9;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -133,7 +132,7 @@ nav h1 {
 
 }
 
-.item-detail h2 {
+.item-detail .page-title {
     position: absolute;
     text-align: center;
     background-color: #FEEAF088;
@@ -141,7 +140,7 @@ nav h1 {
     font-family: aeonik;
     padding: 5px;
     left: 1rem;
-    top: 310px;
+    top: 10px;
 }
 
 .item-detail .close {
@@ -151,11 +150,84 @@ nav h1 {
     padding: 0.5rem 1rem;
     position: absolute;
     right: 1rem;
-    top: 310px;
+    top: 10px;
     color: var(--ascent1);
     cursor: pointer;
 }
 
 .item-detail .close:hover {
     transform: scale(0.95);
+}
+
+.todo-list-detail .todo-list-container{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.todo-list-detail .todo-list-container .todo-list-form{
+    background-color: var(--ascent2);
+    height:500px;
+    width:30%;
+    padding:1rem;
+    border-radius: 1rem;
+    border: 5px solid var(--primary);
+}
+.todo-list-detail .todo-list-container .todo-list-form form{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:20px;
+}
+.todo-list-detail .todo-list-container .todo-list-form form input,textarea{ 
+    padding:15px 25px;
+    font-size: 25px;
+    background-color: var(--ascent1);
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    color: var(--primary);
+    font-weight: 500;
+    width: 100%;
+}
+.todo-list-detail .todo-list-container .todo-list-form form input{ 
+font-weight: 600 ;
+}
+.todo-list-detail .todo-list-container .todo-list-form form button{ 
+    padding:15px 25px;
+    font-size: 25px;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    color: var(--ascent2);
+    background-color: var(--primary);
+    font-weight: 600;
+    width: 100%;
+}
+.todo-list-detail .todo-list-container .todo-list-form .add-task-title{ 
+    padding:15px 25px;
+    font-size: 25px;
+    color: var(--primary);
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.todo-list-detail .todo-list-container .todo-list-items{
+    background-color: var(--ascent2);
+    height:500px;
+    width:65%;
+    padding:1rem;
+    border-radius: 1rem;
+    border: 5px solid var(--primary);
+}
+
+
+.todo-list-detail{
+    display: block;
 }
