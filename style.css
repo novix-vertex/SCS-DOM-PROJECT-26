@@ -187,7 +187,7 @@ nav h1 {
     gap: 20px;
 }
 
-.todo-list-detail .todo-list-container .todo-list-form form input,
+.todo-list-detail .todo-list-container .todo-list-form form input[type="text"],
 textarea {
     padding: 15px 25px;
     font-size: 1.5rem;
@@ -200,9 +200,22 @@ textarea {
     width: 100%;
 }
 
-.todo-list-detail .todo-list-container .todo-list-form form input {
+.todo-list-detail .todo-list-container .todo-list-form form input[type='text'] {
     font-weight: 600;
     cursor: text;
+}
+
+.todo-list-detail .todo-list-container .todo-list-form form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.todo-list-detail .todo-list-container .todo-list-form form input[type="checkbox"] {
+    cursor: pointer;
 }
 
 .todo-list-detail .todo-list-container .todo-list-form form button {
@@ -215,6 +228,7 @@ textarea {
     pointer-events: all;
     cursor: pointer;
 }
+
 .todo-list-detail .todo-list-container .todo-list-form form button:active {
     transform: scale(0.98);
 }
@@ -245,7 +259,13 @@ textarea {
     align-items: center;
     gap: 10px;
     overflow: auto;
+}
 
+.todo-list-detail .todo-list-container .todo-list-items details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .todo-list-detail .todo-list-container .todo-list-items .task {
@@ -259,10 +279,27 @@ textarea {
     border-radius: 5px;
 }
 
+.todo-list-detail .todo-list-container .todo-list-items .task .task-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .todo-list-detail .todo-list-container .todo-list-items .task .task-title {
     font-size: 1.5rem;
     color: var(--primary);
 }
+
+.todo-list-detail .todo-list-container .todo-list-items .task .task-imp {
+    font-size: 0.5rem;
+    background-color: var(--primary);
+    color: var(--ascent1);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--ascent1);
+}
+
 
 .todo-list-detail .todo-list-container .todo-list-items .task .mark-complete-bt {
     font-size: 1rem;
@@ -272,7 +309,7 @@ textarea {
     border-radius: 5px;
     pointer-events: all;
     cursor: pointer;
-    width:200px;
+    width: 200px;
 }
 
 .todo-list-detail .todo-list-container .todo-list-items .task .completed-bt {
@@ -284,6 +321,5 @@ textarea {
     opacity: 50%;
     pointer-events: none;
     cursor: none;
-    width:200px;
+    width: 200px;
 }
-

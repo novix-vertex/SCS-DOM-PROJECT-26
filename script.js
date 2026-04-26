@@ -24,16 +24,20 @@ form.addEventListener("submit", (e, idx) => {
     e.preventDefault();
     const title = document.querySelector("#todo-title");
     const desc = document.querySelector("#todo-desc");
-    addTask(title, desc);
+    const isImportant = document.querySelector("#todo-isimp");
+    addTask(title, desc, isImportant);
 });
-function addTask(title, desc) {
+function addTask(title, desc, isImportant) {
     todolist.push({
         "title": title.value,
         "description": desc.value,
-        "isCompleted": false
+        "isCompleted": false,
+        "isImportant": isImportant.checked
     });
     title.value = "";
     desc.value = "";
+    isImportant.checked = false;
+
     showTaskList();
     title.focus();
 }
@@ -42,9 +46,12 @@ function showTaskList() {
     let sum = '';
     todolist.forEach((todo, idx) => {
         sum += `<div class="task" id=${idx}>
-        <h2 class="task-title">${todo.title}</h2>
-        ${todo.isCompleted ? `<button id=${idx} class="completed-bt">Completed</button>` : `<button id=${idx} class="mark-complete-bt">Mark Complete</button>`}
-    </div>`;
+                    <div class="task-info">
+                        <h2 class="task-title">${todo.title}</h2>
+                        ${todo.isImportant ? `<span id=${idx} class="task-imp">Imp</span>` : ``}
+                    </div>
+                    ${todo.isCompleted ? `<button id=${idx} class="completed-bt">Completed</button>` : `<button id=${idx} class="mark-complete-bt">Mark Complete</button>`}
+               </div>`;
         todo_list_items.innerHTML = sum;
     });
 }
