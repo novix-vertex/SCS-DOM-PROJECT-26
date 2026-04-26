@@ -87,6 +87,7 @@ nav h1 {
     background: var(--ascent1);
     border-radius: 1rem;
     position: relative;
+    cursor: pointer;
 }
 
 .item img {
