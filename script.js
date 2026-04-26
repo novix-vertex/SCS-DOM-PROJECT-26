@@ -29,20 +29,22 @@ form.addEventListener("submit", (e, idx) => {
 });
 function addTask(title, desc, isImportant) {
     todolist.push({
-        "title": title.value,
-        "description": desc.value,
+        "title": title.value.trim(),
+        "description": desc.value.trim(),
         "isCompleted": false,
         "isImportant": isImportant.checked
     });
     title.value = "";
     desc.value = "";
     isImportant.checked = false;
+    setTaskListFromLocalStorage(todolist);
 
     showTaskList();
     title.focus();
 }
 const todo_list_items = document.querySelector(".todo-list-items");
 function showTaskList() {
+    getTaskListFromLocalStorage();
     let sum = '';
     todolist.forEach((todo, idx) => {
         sum += `<div class="task" id=${idx}>
@@ -53,6 +55,7 @@ function showTaskList() {
                     ${todo.isCompleted ? `<button id=${idx} class="completed-bt">Completed</button>` : `<button id=${idx} class="mark-complete-bt">Mark Complete</button>`}
                </div>`;
         todo_list_items.innerHTML = sum;
+
     });
 }
 
@@ -65,6 +68,24 @@ todo_list_items.addEventListener("click", (e) => {
 
 function markCompleted(idx) {
     todolist[idx].isCompleted = true;
+    setTaskListFromLocalStorage(todolist);
     showTaskList();
 }
 
+
+function getTaskListFromLocalStorage() {
+    if(localStorage.getItem("tasklist")){
+        todolist = JSON.parse(localStorage.getItem("tasklist"));
+    todo_list_items.style.justifyContent = "flex-start";
+}
+    else{
+        todo_list_items.style.justifyContent = "center";
+        todo_list_items.style.color = "#fff";
+        todo_list_items.innerHTML = "<h1>No task added yet</h1>";
+    }
+}
+function setTaskListFromLocalStorage(tasklist) {
+    localStorage.setItem("tasklist", JSON.stringify(tasklist));
+}
+
+window.onload = () => showTaskList();
