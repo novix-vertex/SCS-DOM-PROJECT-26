@@ -323,3 +323,52 @@ textarea {
     cursor: none;
     width: 200px;
 }
+
+.daily-planner-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.daily-planner-detail .daily-planner-container {
+    height: 100%;
+    width: 98%;
+    margin: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:0.8rem;
+    padding: 1rem;
+    background: var(--ascent2);
+    border: 2px solid var(--primary);
+    overflow: auto;
+}
+
+.daily-planner-detail .daily-planner-container .daily-planning-cell {
+    background: var(--ascent1);
+    border: 3px solid var(--primary);
+    padding: 0.5rem 1.5rem;
+    width: 49%;
+    border-radius: 0.5rem;
+}
+
+.daily-planner-detail .daily-planner-container .daily-planning-cell p {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+.daily-planner-detail .daily-planner-container .daily-planning-cell input[type=text] {
+    color:var(--primary);
+    width:100%;
+    height:40px;
+    font-size: 1.5rem;
+    outline: none;
+    border:none;
+    padding:10px;
+    font-weight: 600;
+    background-color: transparent;
+}
