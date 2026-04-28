@@ -133,7 +133,7 @@ let daily_planner_cells = document.querySelectorAll(".daily-planning-cell");
 
 daily_planner_cells.forEach((elem,idx)=>{
     elem.addEventListener("input",(e,index)=>{
-        console.log(index);
+        console.log(elem);
     })
 })
 
