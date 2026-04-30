@@ -348,7 +348,7 @@ textarea {
 
 .daily-planner-detail .daily-planner-container .daily-planning-cell {
     background: var(--ascent1);
-    border: 3px solid var(--primary);
+    /* border: 3px solid var(--primary); */
     padding: 0.5rem 1.5rem;
     width: 49%;
     border-radius: 0.5rem;
