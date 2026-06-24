@@ -18,7 +18,7 @@ function openCards() {
 }
 openCards();
 
-
+function todoList(){
 const form = document.querySelector("form");
 form.addEventListener("submit", (e, idx) => {
     e.preventDefault();
@@ -90,7 +90,11 @@ function setTaskListFromLocalStorage(tasklist) {
 
 window.onload = () => showTaskList();
 
+}
 
+todoList();
+
+function dailyPlanner(){
 const start = 6;
 const end = 24;
 
@@ -138,4 +142,7 @@ daily_planner_cells.forEach((elem)=>{
     });
 })
 
+}
+
+dailyPlanner();
 
