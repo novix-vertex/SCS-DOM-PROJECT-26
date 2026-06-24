@@ -107,8 +107,6 @@ for (let i = start; i < end; i++) {
 let daily_planner_container = document.querySelector(".daily-planner-container");
 
 
-
-
 function getDailyPlannerFromLocalStorage() {
     if (localStorage.getItem("dailyplanner")) {
         daily_planner = JSON.parse(localStorage.getItem("dailyplanner"));
@@ -118,23 +116,26 @@ function setDailyPlannerToLocalStorage(dailyplanner) {
     localStorage.setItem("dailyplanner", JSON.stringify(dailyplanner));
 }
 
-
+getDailyPlannerFromLocalStorage();
 let sum = "";
 daily_planner.forEach((elem, idx) => {
-    sum += `<div id = ${idx} class="daily-planning-cell">
+    sum += `<div class="daily-planning-cell">
                     <p>${elem.time}</p>
-                    <input type="text" name="daily-plan-text" id="daily-plan-text" placeholder="..." value=${elem.plan}>
+                    <input type="text" name="daily-plan-text" id = ${idx} placeholder="..." value=${elem.plan}>
                 </div>`;
 });
 
 daily_planner_container.innerHTML = sum;
 
-let daily_planner_cells = document.querySelectorAll(".daily-planning-cell");
+let daily_planner_cells = document.querySelectorAll(".daily-planning-cell input");
 
-daily_planner_cells.forEach((elem,idx)=>{
-    elem.addEventListener("input",(e,index)=>{
-        console.log(elem);
-    })
+daily_planner_cells.forEach((elem)=>{
+    elem.addEventListener("input",()=>{
+        console.log(elem.id,elem.value);
+        daily_planner[elem.id].plan = elem.value;
+        setDailyPlannerToLocalStorage(daily_planner);
+        getDailyPlannerFromLocalStorage();
+    });
 })
 
 
