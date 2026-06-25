@@ -333,7 +333,7 @@ textarea {
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap:0.8rem;
+    gap: 0.8rem;
     padding: 1rem;
     background: var(--ascent2);
     border: 2px solid var(--primary);
@@ -356,13 +356,87 @@ textarea {
 
 
 .daily-planner-detail .daily-planner-container .daily-planning-cell input[type=text] {
-    color:var(--primary);
-    width:100%;
-    height:40px;
+    color: var(--primary);
+    width: 100%;
+    height: 40px;
     font-size: 1.5rem;
     outline: none;
-    border:none;
-    padding:10px;
+    border: none;
+    padding: 10px;
     font-weight: 600;
     background-color: transparent;
+}
+
+
+.motivational-quote-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.quote-card {
+    background-color: var(--primary);
+    border-radius: 1rem;
+    color: var(--primary);
+    width: 50%;
+    padding: 1rem;
+}
+
+.quote-card-inner {
+    background-color: var(--ascent1);
+    border-radius: 0.87rem;
+    color: var(--primary);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+
+}
+
+.quote-card .quote-title,.quote-card .author-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.quote-card .quote-title img{
+    opacity: 0.6;
+    height:32px;
+    width:32px;
+}
+
+
+.quote-card .quote-title .title,
+.quote-card .author-title .author {
+    color: var(--primary);
+    padding: 0.5rem;
+    width: fit-content;
+    border-radius: 0.5rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+.quote-card .author-title .author {
+    text-align: right;
+}
+
+.quote-card .quote {
+    background-color: #FEEAF088;
+    color: var(--primary);
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 2rem;
 }
