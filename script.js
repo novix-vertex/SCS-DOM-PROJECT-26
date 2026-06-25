@@ -181,17 +181,21 @@ function pomodoroTimer() {
     function updateTimer() {
         minutes = Math.floor(workSessionTime / 60);
         seconds = Math.floor(workSessionTime % 60);
+
         if (minutes == 0 && seconds == 0) {
             isWorkSession = !isWorkSession;
             clearInterval(timerInterval);
-            minutes = Math.floor(workSessionTime / 60);
-            seconds = Math.floor(workSessionTime % 60);
-        } else {
             if (!isWorkSession) {
                 workSessionTime = breakTime;
-
+            } else {
+                workSessionTime = 1800;
             }
+            minutes = Math.floor(workSessionTime / 60);
+            seconds = Math.floor(workSessionTime % 60);
+
         }
+        console.log("isWorkSession", isWorkSession);
+        console.log(minutes, seconds);
         updateUI();
     }
 
@@ -219,6 +223,7 @@ function pomodoroTimer() {
 
     function resetTimer() {
         workSessionTime = 1800;
+        isWorkSession = true;
         clearInterval(timerInterval);
         updateTimer();
     }
