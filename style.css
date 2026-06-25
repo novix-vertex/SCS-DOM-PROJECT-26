@@ -119,32 +119,36 @@ nav h1 {
     width: 100%;
     margin-top: 60px;
     background: var(--ascent1);
-    border-radius: 1rem;
     position: relative;
     display: none;
     position: absolute;
+    padding: 1rem;
 }
 
-.item-detail img {
+.item-detail .detail-container {
     width: 100%;
-    aspect-ratio: 16/9;
-    height: 200px;
-    object-fit: cover;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    pointer-events: none;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
 }
+
+.item-detail .detail-container .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 
 .item-detail .page-title {
-    position: absolute;
     text-align: center;
     background-color: #FEEAF088;
     color: var(--primary);
     font-family: aeonik;
     padding: 5px;
-    left: 1rem;
-    top: 10px;
 }
 
 .item-detail .close {
@@ -152,9 +156,6 @@ nav h1 {
     border: 1px solid var(--ascent1);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    position: absolute;
-    right: 1rem;
-    top: 10px;
     color: var(--ascent1);
     cursor: pointer;
 }
@@ -367,20 +368,13 @@ textarea {
     background-color: transparent;
 }
 
-
-.motivational-quote-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
 .quote-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
+    flex: 1;
 }
 
 .quote-card {
@@ -405,16 +399,18 @@ textarea {
 
 }
 
-.quote-card .quote-title,.quote-card .author-title {
+.quote-card .quote-title,
+.quote-card .author-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
-.quote-card .quote-title img{
+
+.quote-card .quote-title img {
     opacity: 0.6;
-    height:32px;
-    width:32px;
+    height: 32px;
+    width: 32px;
 }
 
 
@@ -428,6 +424,7 @@ textarea {
     font-size: 1.3rem;
     font-weight: bolder;
 }
+
 .quote-card .author-title .author {
     text-align: right;
 }
