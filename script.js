@@ -154,10 +154,78 @@ function motivationalQuotes() {
         const response = await fetch("https://dummyjson.com/quotes/random");
         const { quote, author } = await response.json();
         quoteElem.innerHTML = quote;
-        authorElem.innerHTML = "- "+author;
+        authorElem.innerHTML = "- " + author;
     }
     fetchQuote();
 
 
 }
 motivationalQuotes();
+
+function pomodoroTimer() {
+    const time = document.querySelector(".pomodoro-container .timer-container h2");
+    const session = document.querySelector(".pomodoro-container .timer-container h4");
+
+    const startBtn = document.querySelector(".pomodoro-container .action-btns .start-btn");
+    const pauseBtn = document.querySelector(".pomodoro-container .action-btns .pause-btn");
+    const resetBtn = document.querySelector(".pomodoro-container .action-btns .reset-btn");
+
+    let timerInterval = null;
+    let workSessionTime = 1800;
+    let isWorkSession = true;
+    let breakTime = 300;
+
+    let minutes = Math.floor(workSessionTime / 60);
+    let seconds = Math.floor(workSessionTime % 60);
+
+    function updateTimer() {
+        minutes = Math.floor(workSessionTime / 60);
+        seconds = Math.floor(workSessionTime % 60);
+        if (minutes == 0 && seconds == 0) {
+            isWorkSession = !isWorkSession;
+            clearInterval(timerInterval);
+            minutes = Math.floor(workSessionTime / 60);
+            seconds = Math.floor(workSessionTime % 60);
+        } else {
+            if (!isWorkSession) {
+                workSessionTime = breakTime;
+
+            }
+        }
+        updateUI();
+    }
+
+    function updateUI() {
+        time.innerHTML = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`
+        session.innerHTML = isWorkSession ? "Work Session" : "Have a Break";
+    }
+
+    updateTimer();
+
+    function startTimer() {
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (workSessionTime > 0) {
+                workSessionTime--;
+
+                updateTimer();
+            }
+        }, 10);
+    }
+
+    function pauseTimer() {
+        clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+        workSessionTime = 1800;
+        clearInterval(timerInterval);
+        updateTimer();
+    }
+
+    startBtn.addEventListener("click", startTimer);
+    pauseBtn.addEventListener("click", pauseTimer);
+    resetBtn.addEventListener("click", resetTimer);
+}
+
+pomodoroTimer();
