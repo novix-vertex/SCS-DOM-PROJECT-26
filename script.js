@@ -194,8 +194,6 @@ function pomodoroTimer() {
             seconds = Math.floor(workSessionTime % 60);
 
         }
-        console.log("isWorkSession", isWorkSession);
-        console.log(minutes, seconds);
         updateUI();
     }
 
