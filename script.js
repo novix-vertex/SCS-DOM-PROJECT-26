@@ -234,30 +234,74 @@ function pomodoroTimer() {
 pomodoroTimer();
 
 function dashboard() {
+    const city = "Bhopal";
+    const region = "MP";
+
+    setLocation();
+    setDate();
+    setInterval(() => {
+        setTime();
+    }, 1000);
+
     async function callWeatherAPI() {
-        const city = "Bhopal";
         //const key = "PLACE KEY HERE AND UNCOMMENT below method calling - callWeatherAPI";
         let res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}`);
 
         let data = await res.json();
-        
+
         setHeaderUI(data);
     }
     //callWeatherAPI();
 
-    function setHeaderUI(data){
+    function setHeaderUI(data) {
         const temp = document.querySelector(".items .header .left .temp");
- 
+
         const weatherIcon = document.querySelector(".items .header .left .weather .weather-icon");
 
         const weather = document.querySelector(".items .header .left .weather span");
 
-        temp.innerHTML= `${data.current.temp_c}°C`;
-        weather.innerHTML= `${data.current.condition.text}`;
+        temp.innerHTML = `${data.current.temp_c}°C`;
+        weather.innerHTML = `${data.current.condition.text}`;
 
-        weatherIcon.src= `${data.current.condition.icon}`;
-        
-        
+        weatherIcon.src = `${data.current.condition.icon}`;
+
+    }
+
+    function setTime() {
+        const timeText = document.querySelector(".items .header .right .cur-time");
+
+        const now = new Date();
+        const timeFormatter = new Intl.DateTimeFormat("en-IN", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+        const formattedTime = timeFormatter.format(now);
+        timeText.innerHTML = `${formattedTime}`;
+    }
+    function setDate() {
+        const dateText = document.querySelector(".items .header .right .cur-date");
+
+        const now = new Date();
+        const dateFormatter = new Intl.DateTimeFormat("en-IN", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+
+
+        const formattedDate = dateFormatter.format(now);
+        dateText.innerHTML = `${formattedDate}`;
+    }
+
+
+    function setLocation() {
+        const location = document.querySelector(".items .header .right .location");
+
+        location.innerHTML = `${city} (${region})`;
     }
 }
 dashboard();
