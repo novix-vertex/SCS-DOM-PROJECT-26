@@ -6,7 +6,9 @@ function openCards() {
     let details_close = document.querySelectorAll(".close");
     items.forEach((elem) => {
         elem.addEventListener("click", () => {
-            item_details[elem.id].style.display = "block";
+            setTimeout(() => {
+                item_details[elem.id].style.display = "block";
+            }, 1000);
 
             if (item_details[elem.id].classList[0] == "todo-list-detail") {
                 todoList();
@@ -225,7 +227,7 @@ function pomodoroTimer() {
 
                 updateTimer();
             }
-        }, 10);
+        }, 1000);
     }
 
     function pauseTimer() {
