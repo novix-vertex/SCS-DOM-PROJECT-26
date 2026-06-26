@@ -7,6 +7,22 @@ function openCards() {
     items.forEach((elem) => {
         elem.addEventListener("click", () => {
             item_details[elem.id].style.display = "block";
+
+            if (item_details[elem.id].classList[0] == "todo-list-detail") {
+                todoList();
+
+            }
+            if (item_details[elem.id].classList[0] == "daily-planner-detail") {
+                dailyPlanner();
+
+            }
+            if (item_details[elem.id].classList[0] == "motivational-quote-detail") {
+                motivationalQuotes();
+
+            }
+            if (item_details[elem.id].classList[0] == "pomodoro-timer-detail") {
+                pomodoroTimer();
+            }
         });
     });
 
@@ -92,7 +108,6 @@ function todoList() {
 
 }
 
-todoList();
 
 function dailyPlanner() {
     const start = 6;
@@ -144,7 +159,6 @@ function dailyPlanner() {
 
 }
 
-dailyPlanner();
 
 function motivationalQuotes() {
     let quoteElem = document.querySelector('.quote-container .quote-card .quote');
@@ -160,7 +174,6 @@ function motivationalQuotes() {
 
 
 }
-motivationalQuotes();
 
 function pomodoroTimer() {
     const time = document.querySelector(".pomodoro-container .timer-container h2");
@@ -231,7 +244,6 @@ function pomodoroTimer() {
     resetBtn.addEventListener("click", resetTimer);
 }
 
-pomodoroTimer();
 
 function dashboard() {
     const city = "Bhopal";
