@@ -11,30 +11,43 @@
 
 <body>
     <main>
-        <nav>
-            <h1>Productivity Dashboard</h1>
-        </nav>
         <section class="items">
-            <section id="0" class="todo-list item">
-                <img src="https://i.pinimg.com/736x/75/ba/15/75ba15b74a957f124b64c73c5cc9cfd8.jpg" alt="">
-                <h2>Todo List</h2>
-            </section>
-            <section id="1" class="daily-planner item">
-                <img src="https://i.pinimg.com/736x/10/77/fe/1077fe8e7e1f5708b99e06f5cead2ad0.jpg" alt="">
-                <h2>Daily Planner</h2>
-            </section>
-            <section id="2" class="motivational-quote item">
-                <img src="https://i.pinimg.com/1200x/0a/12/12/0a1212ac717985380f1f35284cd6e700.jpg" alt="">
-                <h2>Motivational Quote</h2>
-            </section>
-            <section id="3" class="pomodoro-timer item">
-                <img src="https://i.pinimg.com/736x/e4/03/e4/e403e4e32a1df6d5674d93e11217f44e.jpg" alt="">
-                <h2>Pomodoro Timer</h2>
-            </section>
-            <section id="4" class="goals item">
-                <img src="https://i.pinimg.com/736x/07/c1/c2/07c1c231835d7c17aa0fe94cf7239a0e.jpg" alt="">
-                <h2>Goals</h2>
-            </section>
+            <div class="header">
+                
+                <div class="left">
+                    <h1 class="prod-title">Productivity Dashboard</h1>
+                    <h2 class="temp">40°C</h2>
+                    <h3 class="weather"><img class="weather-icon" src="./assets/images/icons8-weather-50.png" /><span>Sunny</span></h3>
+                </div>
+                <div class="right">
+                    <h3 class="cur-time">05:00:00 AM</h3>
+                    <h2 class="cur-date">Friday, 26 June 2026</h2>
+                    <h4 class="location">Bhopal (MP)</h4>
+                </div>
+            </div>
+            <div class="productivity-cards">
+
+                <section id="0" class="todo-list item">
+                    <img src="https://i.pinimg.com/736x/75/ba/15/75ba15b74a957f124b64c73c5cc9cfd8.jpg" alt="">
+                    <h2>Todo List</h2>
+                </section>
+                <section id="1" class="daily-planner item">
+                    <img src="https://i.pinimg.com/736x/10/77/fe/1077fe8e7e1f5708b99e06f5cead2ad0.jpg" alt="">
+                    <h2>Daily Planner</h2>
+                </section>
+                <section id="2" class="motivational-quote item">
+                    <img src="https://i.pinimg.com/1200x/0a/12/12/0a1212ac717985380f1f35284cd6e700.jpg" alt="">
+                    <h2>Motivational Quote</h2>
+                </section>
+                <section id="3" class="pomodoro-timer item">
+                    <img src="https://i.pinimg.com/736x/e4/03/e4/e403e4e32a1df6d5674d93e11217f44e.jpg" alt="">
+                    <h2>Pomodoro Timer</h2>
+                </section>
+                <!-- <section id="4" class="goals item">
+                    <img src="https://i.pinimg.com/736x/07/c1/c2/07c1c231835d7c17aa0fe94cf7239a0e.jpg" alt="">
+                    <h2>Goals</h2>
+                </section> -->
+            </div>
         </section>
 
         <section id="0" class="todo-list-detail item-detail">
@@ -116,7 +129,7 @@
                 </section>
             </section>
         </section>
-        <section id="4" class="goals-detail item-detail">
+        <!-- <section id="4" class="goals-detail item-detail">
             <section class="detail-container">
                 <section class="header">
                     <button id="4" class="close">Close</button>
@@ -125,7 +138,7 @@
                 <section class="goals-container">
                 </section>
             </section>
-        </section>
+        </section> -->
     </main>
     <script src="script.js"></script>
 </body>

@@ -1,14 +1,11 @@
 /*root variables*/
 :root {
-    /* --primary: #BC430D;
-    --secondary: #F09410;
-    --ascent2: #F0D0C7;
-    --ascent1: #FEEAF0; */
 
     --primary: #710014;
     --secondary: #161616;
     --ascent2: #B38f6f;
     --ascent1: #F2f1ed;
+    --background-color-text: #FEEAF088;
 }
 
 /*fonts*/
@@ -49,35 +46,87 @@ main {
     background-color: var(--secondary);
 }
 
-nav {
-    position: fixed;
+.items {
+    height: 100%;
     width: 100%;
-    height: 60px;
-    background-color: var(--ascent2);
+    background: var(--ascent1);
+    position: absolute;
+}
+
+.items .header {
+    width: 100%;
+    height: fit-content;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    background: url('https://i.pinimg.com/vwebp/736x/84/c0/b1/84c0b1f634376a346cfeff288157183f.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.items .header .right {
+    background-color: var(--background-color-text);
+    padding: 0.5rem 1.5rem;
+
+}
+
+.items .header .right .cur-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.items .header .right .cur-date {
+    font-size: 2rem;
+}
+
+.items .header .right .location {
+    font-size: 2rem;
+    font-weight: 600;
+    padding-block: 2rem;
+    color: var(--secondary);
+}
+
+.items .header .left .prod-title {
+    font-size: 3rem;
+    color: var(--secondary);
+    background-color: var(--background-color-text);
+    padding: 0.1rem 1.5rem;
+}
+
+.items .header .left .temp {
+    font-size: 5rem;
+}
+
+.items .header .left .weather {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary);
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap:0.5rem;
+    background-color: var(--background-color-text);
+    padding-inline:1rem;
+    width: fit-content;
+}
+.items .header .left .weather img{
+    height:50px;
+    aspect-ratio: 1/1;
 }
 
-nav h1 {
-    color: var(--primary);
-    font-family: aeonik;
-    font-weight: 700;
-    text-align: center;
-}
-
-.items {
-    height: calc(100% - 60px);
+.items .productivity-cards {
     width: 100%;
-    margin-top: 60px;
     background: var(--ascent1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 40px;
-    padding-top: 80px;
     position: absolute;
 }
 
@@ -115,14 +164,14 @@ nav h1 {
 }
 
 .item-detail {
-    height: calc(100% - 60px);
+    height: 100%;
     width: 100%;
-    margin-top: 60px;
     background: var(--ascent1);
     position: relative;
     display: none;
     position: absolute;
     padding: 1rem;
+    padding-top: 0.5rem;
 }
 
 .item-detail .detail-container {
@@ -453,10 +502,11 @@ textarea {
     color: var(--primary);
     border-radius: 50%;
     padding: 1rem;
-    width:100%;
+    width: 100%;
     aspect-ratio: 1/1;
 }
-.pomodoro-container .timer-container h4{
+
+.pomodoro-container .timer-container h4 {
     color: var(--secondary);
     font-size: 1.5rem;
 }
@@ -478,6 +528,7 @@ textarea {
     text-transform: uppercase;
     border-radius: 0.87rem;
 }
+
 .pomodoro-container .action-btns .pomodoro-btn:active {
     scale: 0.95;
 }

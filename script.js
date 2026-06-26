@@ -232,3 +232,32 @@ function pomodoroTimer() {
 }
 
 pomodoroTimer();
+
+function dashboard() {
+    async function callWeatherAPI() {
+        const city = "Bhopal";
+        //const key = "PLACE KEY HERE AND UNCOMMENT below method calling - callWeatherAPI";
+        let res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}`);
+
+        let data = await res.json();
+        
+        setHeaderUI(data);
+    }
+    //callWeatherAPI();
+
+    function setHeaderUI(data){
+        const temp = document.querySelector(".items .header .left .temp");
+ 
+        const weatherIcon = document.querySelector(".items .header .left .weather .weather-icon");
+
+        const weather = document.querySelector(".items .header .left .weather span");
+
+        temp.innerHTML= `${data.current.temp_c}°C`;
+        weather.innerHTML= `${data.current.condition.text}`;
+
+        weatherIcon.src= `${data.current.condition.icon}`;
+        
+        
+    }
+}
+dashboard();
